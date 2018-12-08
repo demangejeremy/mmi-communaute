@@ -1,37 +1,50 @@
+// Les importations
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import styled from "styled-components"
 
+// Styles
+const Container = styled.div`
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom-left: 100px solid black;
+`
 
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960;
+  padding: 1.45rem 1.0875rem;
+`
+
+const Lien = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  &:hover{
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+`
+
+// Le composant Header
 const Header = ({ titreSite }) => (
-  <div
-    style={{
-      background: 'black',
-      marginBottom: '20px',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
+  <Container>
+    <Wrapper>
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: 'white',
-          }}
-        >
+        <Lien to="/">
           {titreSite}
-        </Link>
+        </Lien>
       </h1>
-    </div>
-  </div>
+    </Wrapper>
+  </Container>
 )
 
 Header.propTypes = {

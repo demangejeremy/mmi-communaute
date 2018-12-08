@@ -1,15 +1,23 @@
+// Les importations
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import styled from "styled-components"
+
+// Styles
+const Container = styled.div`
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+`
 
 
 const Footer = ({ titreSite }) => (
-  <div
-    style={{
-      background: 'black',
-      marginTop: '50px',
-    }}
-  >
+  <Container>
     <div
       style={{
         margin: '0 auto',
@@ -67,8 +75,9 @@ const Footer = ({ titreSite }) => (
           Contribuer au projet
         </Link>
         | 
-        <Link
-          to="https://github.com/demangejeremy/mmi-communaute"
+        <a
+          href="https://github.com/demangejeremy/mmi-communaute"
+          rel="noopener noreferrer"
           target="_blank"
           style={{
             color: 'white',
@@ -77,10 +86,10 @@ const Footer = ({ titreSite }) => (
          }}
         >
           Rejoindre le projet sur GitHub
-        </Link>
+        </a>
       </p>
     </div>
-  </div>
+  </Container>
 )
 
 Footer.propTypes = {

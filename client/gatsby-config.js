@@ -38,7 +38,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Communauté MMI",
-        short_name: "Communauté MMI",
+        short_name: "MMI",
         start_url: "/",
         background_color: "#6b37bf",
         theme_color: "#6b37bf",

@@ -34,7 +34,7 @@ const Footer = ({ titreSite }) => (
             color: 'white',
           }}
         >
-          {titreSite}, un site web pensé par Jérémy DEMANGE.
+          {titreSite}, une application pensée par Jérémy DEMANGE
         </p>
       </p>
       <hr

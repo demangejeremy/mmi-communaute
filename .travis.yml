@@ -1,1 +1,7 @@
-language: php
+language: node_js
+
+node_js:
+  - 'client/*'
+
+script:
+  - npm run test

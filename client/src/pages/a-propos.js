@@ -1,15 +1,20 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 
 const SecondPage = () => (
   <Layout>
     <h1>À propos</h1>
-    <p>Ceci est un projet Open Source sous licence MIT lancé par Jérémy DEMANGE.</p>
-    <p>Plus d'informations à venir sous peu de temps.</p>
-    <p>N'hésitez pas à contribuer à ce projet :)</p>
-    <Link to="/">Retour à la page d'accueil</Link>
+    <p>
+      Cette application est une application dédiée à l'ensemble des acteurs du DUT MMI. C'est un projet 
+      Open Source sous licence MIT porté par Jérémy DEMANGE.
+    </p>
+    <p>Sur cette page, vous verrez apparaître prochainement de nouvelles informations.</p>
+    <p>N'hésitez pas à contribuer à ce projet pour (notamment), écrire et compléter cette page.</p>
+    <br/>
+    <p>
+      Écrit par <b>Jérémy DEMANGE (@DemangeJeremy)</b>, fondateur du projet. 
+    </p>
   </Layout>
 )
 

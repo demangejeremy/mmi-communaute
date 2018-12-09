@@ -3,6 +3,8 @@ import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import { Link } from 'gatsby'
+import Helmet from 'react-helmet'
+
 
 // Styles
 const Image = styled(Img)`
@@ -52,6 +54,15 @@ export default function Accueil({
 }) {
     return (
     <Container>
+        <Helmet
+          meta={[
+            { name: 'description', content: 'Application dédiée au DUT MMI.' },
+            { name: 'keywords', content: 'mmi, dut, application' },
+          ]}
+        >
+          <html lang="fr" />
+          <title>Communauté MMI</title>
+        </Helmet>
         <Image
         fluid={data.file.childImageSharp.fluid}
         style={{ position: `fixed` }}

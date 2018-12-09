@@ -6,8 +6,8 @@ import styled from "styled-components"
 
 // Styles
 const Container = styled.div`
-  background-color: #21D4FD;
-  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  background-color: #656565;
+  background-image: linear-gradient(19deg, #656565 0%, #181818 100%);
   display: flex;
   flex-direction: column;
   align-items: center;

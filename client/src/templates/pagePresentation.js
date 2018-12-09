@@ -1,6 +1,8 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from '../components/layout'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
 
 export default function Template({
@@ -10,6 +12,9 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
+        <Helmet>
+            <title>{frontmatter.titre} | {data.site.siteMetadata.title}</title>
+        </Helmet>
       <div className="blog-post">
         <h1>{frontmatter.titre}</h1>
         <div
@@ -25,8 +30,17 @@ export default function Template({
   )
 }
 
+Layout.propTypes = {
+    children: PropTypes.node.isRequired,
+  }
+
 export const pageQuery = graphql`
   query($path: String!) {
+    site {
+        siteMetadata {
+          title
+        }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

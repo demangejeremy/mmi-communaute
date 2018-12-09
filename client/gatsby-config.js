@@ -46,6 +46,39 @@ module.exports = {
         icon: "src/images/icon.png", // This path is relative to the root of the site.
       },
     },
+    {
+    resolve: `gatsby-plugin-favicon`,
+    options: {
+      logo: "./src/images/icon.png",
+
+      // WebApp Manifest Configuration
+      appName: null,
+      appDescription: "Application dédiée au DUT MMI.",
+      developerName: "Jérémy DEMANGE",
+      developerURL: null,
+      dir: 'auto',
+      lang: 'fr-FR',
+      background: '#fff',
+      theme_color: '#6b37bf',
+      display: 'standalone',
+      orientation: 'any',
+      start_url: '/',
+      version: '1.0',
+
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false,
+      },
+    },
+  },
     'gatsby-plugin-offline',
   ],
 }

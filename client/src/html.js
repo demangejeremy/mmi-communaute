@@ -15,6 +15,7 @@ export default class HTML extends React.Component {
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
         </head>
         <body>
           <div

@@ -3,11 +3,13 @@
 // php -S localhost:8080 ./graphql.php &
 // curl http://localhost:8080 -d '{"query": "query { echo(message: \"Hello World\") }" }'
 // curl http://localhost:8080 -d '{"query": "mutation { sum(x: 2, y: 2) }" }'
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
 use GraphQL\Type\Schema;
-use GraphQL\GraphQL;
+use GraphQL\Server\StandardServer;
+
 try {
     $queryType = new ObjectType([
         'name' => 'Query',
@@ -23,6 +25,7 @@ try {
             ],
         ],
     ]);
+
     $mutationType = new ObjectType([
         'name' => 'Calc',
         'fields' => [
@@ -38,25 +41,21 @@ try {
             ],
         ],
     ]);
+
     // See docs on schema options:
     // http://webonyx.github.io/graphql-php/type-system/schema/#configuration-options
     $schema = new Schema([
         'query' => $queryType,
         'mutation' => $mutationType,
     ]);
-    $rawInput = file_get_contents('php://input');
-    $input = json_decode($rawInput, true);
-    $query = $input['query'];
-    $variableValues = isset($input['variables']) ? $input['variables'] : null;
-    $rootValue = ['prefix' => 'You said: '];
-    $result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
-    $output = $result->toArray();
+
+    // See docs on server options:
+    // http://webonyx.github.io/graphql-php/executing-queries/#server-configuration-options
+    $server = new StandardServer([
+        'schema' => $schema
+    ]);
+
+    $server->handleRequest();
 } catch (\Exception $e) {
-    $output = [
-        'error' => [
-            'message' => $e->getMessage()
-        ]
-    ];
+    StandardServer::send500Error($e);
 }
-header('Content-Type: application/json; charset=UTF-8');
-echo json_encode($output);

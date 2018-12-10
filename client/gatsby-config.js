@@ -6,18 +6,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-twitter`,
-      options: {           
-          q: `@DemangeJeremy`,    
-          credentials: {
-              consumer_key: "aNZDEsTw10NYQrQxOVy9t9Uxs",
-              consumer_secret: "gPdp6wKVDOfiwCgB5VB20KDITUvdUIorusn18iELJltefqmsm9",
-              bearer_token: "iUp5qxugnMIDSgpxAcGEKxbKUtPPUuSdysFhPTcSaOiAw",
-          },
-          tweet_mode: 'extended',
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

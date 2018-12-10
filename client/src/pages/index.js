@@ -2,7 +2,7 @@ import React from 'react'
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 
 
@@ -30,6 +30,20 @@ const Titre = styled.h1`
   color: white;
 `
 
+const SousTitre = styled.h2`
+  opacity: 0.7;
+  font-size: 1em;
+  text-align: center;
+  color: white;
+`
+
+const Paragraphe = styled.p`
+  opacity: 0.7;
+  font-size: 0.9em;
+  text-align: center;
+  color: white;
+`
+
 const Bloc = styled.div`
   position: absolute;
   top: 50%;
@@ -37,6 +51,7 @@ const Bloc = styled.div`
   transform: translate(-50%, -50%);
 `
 
+/*
 const Lien = styled(Link)`
   text-align: center;
   border: 1px solid white;
@@ -48,7 +63,7 @@ const Lien = styled(Link)`
     background-color: white;
   }
 `
-
+*/
 export default function Accueil({
     data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -66,11 +81,12 @@ export default function Accueil({
         <Image
         fluid={data.file.childImageSharp.fluid}
         style={{ position: `fixed` }}
-      />
+        />
       <Bloc>
         <ContenuHeader>
         <Titre>Communauté MMI</Titre>
-        <Lien to="/a-propos/">En savoir plus sur le projet</Lien>
+        <SousTitre>L'application dédiée au DUT Métiers du Multimédia et de l'Internet.</SousTitre>
+        <Paragraphe>Rendez-vous courant janvier 2019.</Paragraphe>
         </ContenuHeader>
       </Bloc>
     </Container>

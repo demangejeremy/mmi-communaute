@@ -19,7 +19,7 @@ const Container = styled.div`
   margin: 0;
   padding: 0;
   background: 0;
-`
+` 
 
 const ContenuHeader = styled.div`
   position: relative;

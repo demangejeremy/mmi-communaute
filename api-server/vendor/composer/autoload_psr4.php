@@ -6,5 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Tests\\' => array($vendorDir . '/rbdwllr/reallysimplejwt/tests'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Contracts\\' => array($vendorDir . '/symfony/contracts'),
+    'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
+    'ReallySimpleJWT\\Helper\\' => array($vendorDir . '/rbdwllr/reallysimplejwt/src/Helper'),
+    'ReallySimpleJWT\\Exception\\' => array($vendorDir . '/rbdwllr/reallysimplejwt/src/Exception'),
+    'ReallySimpleJWT\\' => array($vendorDir . '/rbdwllr/reallysimplejwt/src'),
     'GraphQL\\' => array($vendorDir . '/webonyx/graphql-php/src'),
+    '' => array($vendorDir . '/nesbot/carbon/src'),
 );

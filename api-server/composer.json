@@ -1,5 +1,6 @@
 {
     "require": {
-        "webonyx/graphql-php": "^0.13.0"
+        "webonyx/graphql-php": "^0.13.0",
+        "rbdwllr/reallysimplejwt": "^1.0"
     }
 }
